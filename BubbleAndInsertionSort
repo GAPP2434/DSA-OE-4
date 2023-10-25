@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+        int size = 0;
+        int elements = 0;
+        Scanner input = new Scanner(System.in);
+        //Getting the size of the array
+        System.out.print("Number of elements to be inputted: ");
+        size = input.nextInt();
+        //taking in user input to create the array
+        int[] array1 = new int [size];
+        for(int i = 0; i<size; i++){
+            System.out.print("Enter the Element: ");
+            array1[i] = input.nextInt();
+        }
+        //printing the unsorted array
+        System.out.print("The Unsorted Array is: ");
+        System.out.print("[");
+        for (int i = 0; i<size; i++){
+            System.out.print(array1[i] + ",");
+        }
+        System.out.println("]");
