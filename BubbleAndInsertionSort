@@ -5,6 +5,8 @@ public class Main
     public static void main(String[] args) {
         int size = 0;
         int elements = 0;
+        int countB = 0;
+        int countInsertion = 0;
         Scanner input = new Scanner(System.in);
         //Getting the size of the array
         System.out.print("Number of elements to be inputted: ");
@@ -22,6 +24,10 @@ public class Main
             System.out.print(array1[i] + ",");
         }
         System.out.println("]");
+        System.out.println("How would you like to sort the array? Through Bubble Sort or Insertion Sort?");
+        System.out.print("Press 1 for Bubble Sort, Press 2 for Insertion Sort: ");
+        int choice = input.nextInt();
+        if (choice == 1){
         //sorting the array using bubble sorting
         for(int i = 0 ; i<size; i++){
             for(int j = i+1 ; j<size; j++){
@@ -30,6 +36,7 @@ public class Main
                 temp = array1[i];
                 array1[i] = array1[j];
                 array1[j] = temp;
+                countB++;
                 }
             }
         }
@@ -39,6 +46,9 @@ public class Main
             System.out.print(array1[i] + ",");
         }
         System.out.println("]");
+        System.out.println("Bubble Sort has Iterated " + countB + " times");
+        }
+        else if (choice == 2){
         //insertion sort
         for (int i = 1; i < size; i++) {
             int current = array1[i];
@@ -47,6 +57,7 @@ public class Main
             while (j >= 0 && array1[j] > current) {
                 array1[j + 1] = array1[j];
                 j--;
+                countInsertion++;
             }
             array1[j+1] = current;
         }
@@ -56,5 +67,10 @@ public class Main
             System.out.print(array1[i] + ",");
         }
         System.out.println("]");
+        System.out.println("Insertion Sort has Iterated " + countInsertion + " times");
+        }
+        else{
+            return;
+        }
     }
 }
