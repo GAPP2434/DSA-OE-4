@@ -22,3 +22,39 @@ public class Main
             System.out.print(array1[i] + ",");
         }
         System.out.println("]");
+        //sorting the array using bubble sorting
+        for(int i = 0 ; i<size; i++){
+            for(int j = i+1 ; j<size; j++){
+                int temp = 0;
+                if (array1[i] > array1[j]){
+                temp = array1[i];
+                array1[i] = array1[j];
+                array1[j] = temp;
+                }
+            }
+        }
+        System.out.print("The Sorted Array using Bubble Sort is: ");
+        System.out.print("[");
+        for (int i = 0; i<size; i++){
+            System.out.print(array1[i] + ",");
+        }
+        System.out.println("]");
+        //insertion sort
+        for (int i = 1; i < size; i++) {
+            int current = array1[i];
+            int j = i - 1;
+
+            while (j >= 0 && array1[j] > current) {
+                array1[j + 1] = array1[j];
+                j--;
+            }
+            array1[j+1] = current;
+        }
+        System.out.print("The Sorted Array using Insertion Sort is: ");
+        System.out.print("[");
+        for (int i = 0; i<size; i++){
+            System.out.print(array1[i] + ",");
+        }
+        System.out.println("]");
+    }
+}
